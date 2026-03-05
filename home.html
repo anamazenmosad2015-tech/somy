@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question for Somy 💖</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+}
+
+#noBtn{
+position:absolute;
+transition: all 0.2s ease;
+}
+
+.popup-message{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:20px 30px;
+border-radius:20px;
+font-weight:bold;
+font-size:1.2rem;
+color:#e11d48; /* red-600 */
+display:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body class="h-screen flex items-center justify-center text-center">
+
+<div class="bg-white p-10 rounded-2xl shadow-xl relative">
+
+<h1 class="text-3xl font-bold text-pink-500 mb-8">
+Somy 💖<br>
+Are you my love?
+</h1>
+
+<div class="flex justify-center gap-6 relative">
+
+<button onclick="goNext()" 
+class="px-6 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600">
+Yes 💖
+</button>
+
+<button id="noBtn"
+onmouseover="moveButton()"
+class="px-6 py-3 bg-red-500 text-white rounded-xl">
+No 😅
+</button>
+
+</div>
+
+</div>
+
+<div id="message" class="popup-message">
+You have no choice 😌
+</div>
+
+<script>
+
+function goNext(){
+  // غيّر اسم الصفحة حسب الصفحة بتاعت عيد الميلاد
+  window.location.href="birthday.html"; 
+}
+
+/* زر No يهرب ويظهر الرسالة */
+function moveButton(){
+  let btn=document.getElementById("noBtn");
+  let message=document.getElementById("message");
+
+  // يظهر الرسالة
+  message.style.display="block";
+
+  // يختفي بعد ثانية ونص
+  setTimeout(()=>{
+    message.style.display="none";
+  },1500);
+
+  // يحرك الزر لمكان عشوائي
+  let x=Math.random()*300;
+  let y=Math.random()*200;
+  btn.style.left=x+"px";
+  btn.style.top=y+"px";
+}
+
+</script>
+
+</body>
+</html>
